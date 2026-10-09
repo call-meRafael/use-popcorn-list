@@ -140,6 +140,7 @@ body {
   font-family: var(--ff-main-sans);
   background-color: hsl(var(--clr-black) / 0.85);
   /* margin-block-start: 2rem; */
+  margin-inline: auto;
 }
 
 #root {
