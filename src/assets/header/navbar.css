@@ -1,0 +1,41 @@
+@import url(logo.css);
+.nav-bar {
+  border-bottom: 4px solid hsl(var(--clr-magenta-500));
+  
+ 
+
+  & .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    padding-block: .75rem;
+    background-color: hsl(var(--clr-purple-500));
+    line-height: 1;
+    
+  }
+
+  & .logo-icon {
+    filter: drop-shadow(0 2px 2px hsl(var(--clr-black) / .75));
+  }
+
+  & .header-title-alt {
+    color: hsl(var(--clr-magenta-500));
+    font-family: var(--ff-main-sans);
+    font-size: 1.125rem;
+    font-weight: 600;
+
+    filter: drop-shadow(0 2px 2px hsl(var(--clr-black) / .75));
+  }
+
+
+  & .header-title {
+    color: hsl(var(--clr-offwhite));
+    font-family: var(--ff-main-serif);
+    font-size: 1.5rem;
+
+    filter: drop-shadow(0 2px 2px hsl(var(--clr-black) / .75));
+    letter-spacing: 2px;
+  }
+}

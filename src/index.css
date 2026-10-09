@@ -1,10 +1,147 @@
 @import url(App.css);
 
 /* ================================RESET==================================== */
+/* 1. Zera a especificidade e define o box-sizing global */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+/* 2. Remove margens padrão, exceto em diálogos nativos */
+*:not(dialog) {
   margin: 0;
   padding: 0;
+}
+
+/* 3. Configura o elemento raiz para ocupar a altura total da tela */
+html,
+body {
+  min-height: 100dvh;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* Fontes mais suaves em telas Retina */
+}
+
+/* 4. Melhora a legibilidade e quebra de textos */
+p {
+  text-wrap: pretty; /* Evita órfãs (palavras sozinhas na última linha) */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance; /* Distribui melhor os títulos em várias linhas */
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* 5. Padroniza mídias para nunca estourarem o container */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 6. Herança correta para elementos de formulário */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* 7. Remove estilos padrão de listas */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 8. Links sem sublinhado e herdando cor (opcional, mas comum) */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ========================================================================= */
+
+/* ================================GLOBAL STYLES============================== */
+:root {
+  /*===========FONTS===========*/
+  --ff-main-serif: "Bungee Shade", serif;
+  --ff-main-sans: "Montserrat", sans-serif;
+  --ff-mono: "Fira code", monospace;
+
+  --ff-alt-sans: "Inter", sans-serif;
+  --ff-sub-sans: "Quicksand", sans-serif;
+
+  /* ======== COLORS ======== */
+  --clr-black: 0 0 0; /* Preto puro */
+  --clr-offwhite: 39 50 90; /* Creme */
+
+  /* --- Accent Colors --- */
+  --clr-purple-500: 256 75 61; /* #7950E6 Roxo vibrante principal */
+  --clr-magenta-500: 289 75 61; /* #CA50E6 Magenta/Orquídea para variações e hovers */
+
+  /* Cores de Suporte (Avisos, Destaques Secundários ou Detalhes) */
+  --clr-gold-500: 43 100 40; /* #CA9100 Ouro/Âmbar escuro */
+  --clr-yellow-500: 55 75 61; /* #E6D950 Amarelo/Dourado claro */
+
+  /* Tons Neutros / Muted (Para textos secundários, bordas ou fundos discretos) */
+  --clr-khaki-500: 55 19 48; /* #918D63 Cáqui/Oliva acinzentado */
+  --clr-gray-500: 44 8 37; /* #666257 Cinza quente/Muted */
+
+  /* Marca e Elementos Interativos (Botões, Links, Ícones Ativos) */
+  --accent-primary: hsl(var(--clr-purple-500));
+  --accent-secondary: hsl(var(--clr-magenta-500));
+
+  /* Alertas, Destaques de Texto ou Elementos de Atenção */
+  --highlight-strong: hsl(var(--clr-gold-500));
+  --highlight-light: hsl(var(--clr-yellow-500));
+
+  /* Tipografia / Textos */
+  --text-muted: hsl(
+    var(--clr-khaki-500)
+  ); /* Ótimo para legendas ou descrições */
+  --text-subtle: hsl(
+    var(--clr-gray-500)
+  ); /* Para textos desativados ou secundários */
+
+  /* Bordas e Divisores */
+  --border-subtle: hsl(var(--clr-gray-500));
+
+  /* ======== SHADOWS ======== */
+  --shadow-s:
+    inset 0 1px 2px #ffffff30, 0 1px 2px #00000030, 0 2px 4px #00000015;
+  --shadow-m:
+    inset 0 1px 2px #ffffff50, /* top highlight */ 0 2px 4px #00000030,
+    /* dark shadow */ 0 4px 8px #00000015; /* soft shadow */
+  --shadow-l:
+    inset 0 1px 2px #ffffff70, /* top highlight */ 0 4px 6px #00000030,
+    /* dark shadow */ 0 6px 10px #00000015; /* soft shadow */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 90rem;
+  font-family: var(--ff-main-sans);
+  background-color: hsl(var(--clr-black) / 0.85);
+  /* margin-block-start: 2rem; */
+}
+
+#root {
+  width: 100%;
 }
